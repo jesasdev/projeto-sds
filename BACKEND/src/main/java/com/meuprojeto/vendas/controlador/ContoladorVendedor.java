@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.meuprojeto.vendas.DTO.VendedorDTO;
+import com.meuprojeto.vendas.dto.VendedorDTO;
 import com.meuprojeto.vendas.servico.ServicoVendedor;
 
 @RestController

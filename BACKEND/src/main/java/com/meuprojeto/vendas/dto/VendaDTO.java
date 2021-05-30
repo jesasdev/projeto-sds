@@ -1,4 +1,4 @@
-package com.meuprojeto.vendas.DTO;
+package com.meuprojeto.vendas.dto;
 
 import java.time.LocalDate;
 

@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.meuprojeto.vendas.DTO.VendedorDTO;
+import com.meuprojeto.vendas.dto.VendedorDTO;
 import com.meuprojeto.vendas.entidades.Vendedor;
 import com.meuprojeto.vendas.repositories.RepositorioVendedor;
 
