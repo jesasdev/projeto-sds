@@ -7,12 +7,12 @@ const BarChart = () => {
 
     const options = {
         plotOptions: {
-            bar: {
+            bar: { 
                 horizontal: true,
             }
         },
     };
-    
+
     const mockData = {
         labels: {
             categories: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé']
@@ -20,18 +20,18 @@ const BarChart = () => {
         series: [
             {
                 name: "% Sucesso",
-                data: [43.6, 67.1, 67.7, 45.6, 71.1]                   
+                data: [43.6, 67.1, 67.7, 45.6, 71.1]
             }
         ]
     };
     return (
-      <Chart
-options={{...options,xaxis:mockData.labels}}
-series={mockData.series}
-type="bar"
-height="240"
+        <Chart
+            options={{ ...options, xaxis: mockData.labels }}
+            series={mockData.series}
+            type="bar"
+            height="240"
 
-      />  
+        />
 
     );
 }

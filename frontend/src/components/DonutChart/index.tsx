@@ -2,28 +2,52 @@
 
 
 
+import axios from "axios"
+import { useEffect, useState } from "react"
 import Chart from "react-apexcharts"
+import { VendaSum } from "types/venda"
+import { BASE_URL } from "utils/requests"
+
+type ChartData = {
+    labels: string[];
+    series: number[];
+
+}  
+
 const DonutChart = () => {
-
-
-    const mockData = {
-        series: [477138, 499928, 444867, 220426, 473088],
-        labels: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé']
-    }
+   
+    const [chartData ,setChartData] =useState<ChartData>({ labels: [], series: []})
     
+    useEffect(()=>{
+        axios.get(BASE_URL + '/vendas/montante-by-vendedor')
+        .then(Response => {
+            const data = Response.data as VendaSum[];
+            const myLabels = data.map(x => x.vendedorName);
+            const mySeries = data.map(x => x.sum);
+            setChartData({labels:myLabels,series:mySeries});
+            console.log(chartData)
+
+        }); 
+    },[]);
+    
+    //const mockData = {
+    //   series: [477138, 499928, 444867, 220426, 473088],
+    //   labels: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé']
+    //}
+
     const options = {
         legend: {
             show: true
         }
     }
     return (
-      <Chart
-options={{...options,labels:mockData.labels}}
-series={mockData.series}
-type="donut"
-height="240"
+        <Chart
+            options={{ ...options, labels: chartData.labels }}
+            series={chartData.series}
+            type="donut"
+            height="240"
 
-      />  
+        />
 
     );
 }

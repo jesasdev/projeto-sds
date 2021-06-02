@@ -7,18 +7,18 @@ const Routes = () => {
     return (
 
         <BrowserRouter>
-<Switch>
-    <Route path ="/"exact >
-        <Home/>
-    </Route>
-    <Route path ="/Dashboard" >
-        <Dashboard/>
-    </Route>
-</Switch>
+            <Switch>
+                <Route path="/" exact >
+                    <Home />
+                </Route>
+                <Route path="/Dashboard" >
+                    <Dashboard />
+                </Route>
+            </Switch>
         </BrowserRouter>
 
-      
-    
+
+
     );
 }
 
