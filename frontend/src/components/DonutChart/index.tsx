@@ -19,7 +19,7 @@ const DonutChart = () => {
     const [chartData, setChartData] = useState<ChartData>({ labels: [], series: [] })
 
     useEffect(() => {
-        axios.get(BASE_URL + '/vendas/montante-by-vendedor')
+        axios.get(`${BASE_URL}/vendas/montante-by-vendedor`)
             .then(Response => {
                 const data = Response.data as VendaSum[];
                 const myLabels = data.map(x => x.vendedorName);
@@ -29,11 +29,6 @@ const DonutChart = () => {
 
             });
     }, []);
-
-    //const mockData = {
-    //   series: [477138, 499928, 444867, 220426, 473088],
-    //   labels: ['Anakin', 'Barry Allen', 'Kal-El', 'Logan', 'Padmé']
-    //}
 
     const options = {
         legend: {
